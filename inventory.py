@@ -32,10 +32,14 @@ for i in range(len(period)):
             A=+((U-segment[i][j])*alpha[i][j])+segment[i][j]
             I+=U-A
             for k in range(1,len(period)):
-                if I<=segment[k][j]:
+                print(segment[k][j])
+                while I<=segment[k][j]:
                     print('Not viable')
-                else:
-                    print('continue')
+                    U+=1
+                    I+=1-alpha[i][j]
+                    print('Increased U',U)
+                    print('New inventory',I)
+                
             print(A)
             print('Inventory is',I)
         
